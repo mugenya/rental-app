@@ -1,0 +1,37 @@
+<div style="margin-bottom: 7px;">
+	<img src="/files/3ViLmxP.png" width="233">
+      <p class="pull-right"> <strong>FIDELITY SHIELD INSURANCE COMPANY LTD.</strong>
+		    <br>P.O. BOX 43375-00100, NAIROBI, KENYA
+		    <br>FIDELITY CENTRE, WAIYAKI WAY
+		    <br>0709889900
+		    <br>info@fidelityshield.co.ke
+     </p>
+</div>
+<h2 class="text-center">{%= __("Invoice Report") %}</h2>
+<hr>
+<div class="row">
+     <h2 class="text-center">{%= __("Invoice Details") %}</h2>
+</div>
+<div class="row">
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th style="width: 15%">{%= __("Amount") %}</th>
+			<th style="width: 15%">{%= __("Balance") %}</th>
+			<th style="width: 15%; text-align: right;">{%= __("Tenant") %}</th>
+			<th style="width: 20%">{%= __("Invoice") %}</th>
+			
+		</tr>
+	</thead>
+	<tbody>
+	     {% for(var i=0, l=data.length; i<l; i++) { %}
+	         <tr>
+             <td style="text-align: right">{%= format_currency(data[i]["trans_amount"]) %}</td>
+             <td style="text-align: right">{%= format_currency(data[i]["trans_balance"]) %}</td>
+             <td>{%= data[i]["tenant"] %}</td>
+             <td>{%= data[i]["trans_reference"] %}</td>
+              </tr>
+	     {% } %}
+	</tbody>
+</table>
+</div
